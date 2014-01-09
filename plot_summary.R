@@ -58,8 +58,8 @@ Fn_Discretize_Fraction <- function(in_mat) {
   in_mat[in_mat <= 0] <- NA
   in_mat <- melt(in_mat)
   in_mat$colorScale <- cut(in_mat$value, 
-                           breaks = c(0, 0.1, 0.2, 0.3, 0.5, 0.75, 1, 1.5, 3), 
-                           labels = c("10%", "20%", "30%", "50%", "75%", "100%", "150%", "300%"),
+                           breaks = c(0, 0.1, 0.3, 0.5, 0.75, 1, 1.5, 3, 5), 
+                           labels = c("10%", "30%", "50%", "75%", "100%", "150%", "300%", "500%"),
                            include.lowest = TRUE)
   
   return (in_mat)

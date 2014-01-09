@@ -1,4 +1,4 @@
-Analysis of High-Resolution Rainfall Data from PRISM
+USA Drought of 2013: Analysis of High-Resolution Rainfall Data Using R
 ========================================================
 
 The ongoing drought in California and other parts of Southwestern United States has been reported extensively by [newspapers](http://www.mercurynews.com/science/ci_24812749/california-drought-deepens-another-years-rains-stay-away) and [government sites](http://droughtmonitor.unl.edu/).
@@ -103,9 +103,9 @@ Fn_Discretize_Fraction <- function(in_mat) {
     in_mat <- Fn_Rotate_Matrix(in_mat)
     in_mat[in_mat <= 0] <- NA
     in_mat <- melt(in_mat)
-    in_mat$colorScale <- cut(in_mat$value, breaks = c(0, 0.1, 0.2, 0.3, 0.5, 
-        0.75, 1, 1.5, 3), labels = c("10%", "20%", "30%", "50%", "75%", "100%", 
-        "150%", "300%"), include.lowest = TRUE)
+    in_mat$colorScale <- cut(in_mat$value, breaks = c(0, 0.1, 0.3, 0.5, 0.75, 
+        1, 1.5, 3, 5), labels = c("10%", "30%", "50%", "75%", "100%", "150%", 
+        "300%", "500%"), include.lowest = TRUE)
     
     return(in_mat)
 }
